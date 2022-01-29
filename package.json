@@ -17,11 +17,13 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.25.0",
+    "electron-store": "^8.0.1",
+    "electron-updater": "^4.6.1",
     "jquery": "^3.6.0",
-    "electron-store": "^8.0.1"
+    "render": "^0.1.4"
   },
   "devDependencies": {
-    "electron": "^16.0.7",
+    "electron": "^16.0.8",
     "electron-builder": "^22.14.5"
   }
 }
