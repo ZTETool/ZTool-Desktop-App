@@ -1,14 +1,87 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Config</title>
-    <link rel="stylesheet" href="../base.css">
-    <script src="./../jquery.js"></script>
+    <title>5G Bands</title>
+    <script src="../jquery.js"></script>
+    <script src="../utilities.js"></script>
+    <script src="../links_opener.js"></script>
+    <script src="../../../main.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../web.css"> <!-- Web css-->
+    <link rel="stylesheet" href="../font.css"> <!-- Fonts css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- Font Awesome css -->
+<style>
+body {font-family: "Lato", sans-serif}
+.mySlides {display: none}
+</style>
 </head>
 <body>
-<div id="config-modem">
-    <h1>5G Bands</h1>
-    <div class="dgrid gridcol3">
+
+<!-- Navbar section -->
+<div class="w3-top" >
+  <div class="w3-bar w3-black w3-card" style="-webkit-app-region: drag">
+    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    
+    
+        <div class="w3-dropdown-hover w3-hide-small" style="-webkit-app-region: no-drag">
+      <button class="w3-padding-large w3-button" title="More">File <i class="fa fa-caret-down"></i></button>     
+      <div class="w3-dropdown-content w3-bar-block w3-card-1">
+              <a href="./../index/index.html" class="w3-bar-item w3-button">Info</a>
+              <a href="./../status/status.html" class="w3-bar-item w3-button">Status</a>
+    <a onclick="window.close()"class="w3-bar-item w3-button">Quit</a>
+    
+      </div>
+    </div>
+    
+    
+   
+    <div class="w3-dropdown-hover w3-hide-small" style="-webkit-app-region: no-drag">
+      <button class="w3-padding-large w3-button" title="More">Cell Settings <i class="fa fa-caret-down"></i></button>     
+      <div class="w3-dropdown-content w3-bar-block w3-card-2">
+              <a href="./../cellSettings-4gband/cellSettings-4gband.html" class="w3-bar-item w3-button">LTE Bands</a>
+        <a href="./../cellSettings-5gband/cellSettings-5gband.html" class="w3-bar-item w3-button">5G Bands</a>
+	<a href="./../cellSettings-4gcell/cellSettings-4gcell.html" class="w3-bar-item w3-button">LTE Cell Lock</a>
+      </div>
+    </div>
+    
+    <div class="w3-dropdown-hover w3-hide-small" style="-webkit-app-region: no-drag">
+      <button class="w3-padding-large w3-button" title="More">Config <i class="fa fa-caret-down"></i></button>     
+      <div class="w3-dropdown-content w3-bar-block w3-card-3">
+        <a href="./../config-modem/config-modem.html" class="w3-bar-item w3-button">Modem</a>
+        <a href="./../networkSettings-opmode/networkSettings-opmode.html" class="w3-bar-item w3-button">Operation Mode</a>
+      </div>
+    </div>
+        <div class="w3-dropdown-hover w3-hide-small"style="-webkit-app-region: no-drag">
+      <button class="w3-padding-large w3-button" title="More">Help <i class="fa fa-caret-down"></i></button>     
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="./../debug/debug.html" class="w3-bar-item w3-button">Debug</a>
+        <a href="https://github.com/ZTETool" target="_blank" rel="noopener" class="w3-bar-item w3-button">Help & Guides</a>
+        <a href="./../updater/updater.html" class="w3-bar-item w3-button">Check For Updates</a>
+        <a href="./../about/about.html" class="w3-bar-item w3-button">About</a>
+      </div>
+    </div>
+    <a onclick="window.close()" class="w3-padding-large w3-hover-red w3-hide-small w3-right" style="-webkit-app-region: no-drag"><i class="fa fa-times-circle-o"></i></a>
+    <a id="max-btn"class="w3-padding-large w3-hover-red w3-hide-small w3-right" style="-webkit-app-region: no-drag"><i class="fa fa-window-maximize"></i></a>
+        <a onclick="BrowserWindow.minimize()" class="w3-padding-large w3-hover-red w3-hide-small w3-right" style="-webkit-app-region: no-drag"><i class="fa fa-window-minimize"></i></a>
+  </div>
+  
+</div>
+
+
+<!-- Navbar section End-->
+
+
+<!--Body Content-->
+
+
+<!-- NR Bands -->
+<div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
+<h2 class="w3-wide">5G Bands</h2>
+ <div class="w3-row-padding w3-padding-32" style="margin:0 -16px">
+<!-- NR 1/38 -->
+        <div class="w3-third w3-margin-bottom">
+          <div class="w3-container w3-white">
         <div>
             <label for="5gBandN1">n1</label>
             <input type="checkbox" id="5gBandN1" class="nr5gBands" value="1">
@@ -45,7 +118,12 @@
             <label for="5gBandN38">n38</label>
             <input type="checkbox" id="5gBandN38" class="nr5gBands" value="38">
         </div>
-        <div>
+                  </div>
+        </div>
+<!-- NR 41/78 -->
+       <div class="w3-third w3-margin-bottom">
+          <div class="w3-container w3-white">
+  	  <div>
             <label for="5gBandN41">n41</label>
             <input type="checkbox" id="5gBandN41" class="nr5gBands" value="41">
         </div>
@@ -85,11 +163,16 @@
             <label for="5gBandN77">n77</label>
             <input type="checkbox" id="5gBandN77" class="nr5gBands" value="77">
         </div>
+                  </div>
+        </div>
+<!-- NR 78/257 -->
+        <div class="w3-third w3-margin-bottom">
+          <div class="w3-container w3-white">
         <div>
             <label for="5gBandN78">n78</label>
             <input type="checkbox" id="5gBandN78" class="nr5gBands" value="78">
         </div>
-        <div>
+ 	  <div>
             <label for="5gBandN79">n79</label>
             <input type="checkbox" id="5gBandN79" class="nr5gBands" value="79">
         </div>
@@ -117,10 +200,29 @@
             <label for="5gBandN257">n257</label>
             <input type="checkbox" id="5gBandN257" class="nr5gBands" value="257">
         </div>
-    </div>
-    <button onclick="saveSettings()">Save</button>
-    <button onclick="retsetToAuto()">Reset To Auto</button>
+       </div>
+	</div>
+  </div>
 </div>
+
+
+<!-- Button-->
+
+
+<div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
+<button onclick="saveSettings()"class="w3-button w3-black w3-margin-bottom">Save</button>
+<button onclick="retsetToAuto()"class="w3-button w3-black w3-margin-bottom">Reset To Auto</button>
+          </div>
+
+
+<!--Body Content End-->
+
+<!--scripts Section-->
+
 <script src="./cellSettings-5gband.js"></script>
+
+<!--scripts Section End-->
+
+
 </body>
 </html>

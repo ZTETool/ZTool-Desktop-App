@@ -1,16 +1,23 @@
 const { BrowserWindow, Menu } = require('electron');
 const menu = require('./menu');
+const { autoUpdater } = require('electron-updater');
 
 const defaultProps = {
-    with: 800,
-    height: 600,
+    with: 1224,
+    height: 700,
     show: false,
+    resizable: false,
+    frame: false,
+    blur: false,
     webPreferences: {
         nodeIntegration: true,
+        devTools: false,
         contextIsolation: false,
         enableRemoteModule: true,
     },
 }
+
+
 
 class Window extends BrowserWindow {
     constructor({file, ...windowSettings}) {
@@ -20,12 +27,12 @@ class Window extends BrowserWindow {
 
         this.loadFile(file)
 
-        Menu.setApplicationMenu(Menu.buildFromTemplate(menu));
+        Menu.setApplicationMenu(null);
 
         this.webContents.openDevTools();
 
         this.once('ready-to-show', () => {
-            this.show();
+            autoUpdater.checkForUpdatesAndNotify();  this.show();
         });
     }
 
