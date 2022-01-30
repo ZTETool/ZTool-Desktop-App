@@ -1,0 +1,33 @@
+{
+  "name": "ZTool",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder"
+  },
+  "build": {
+    "appId": "ztool",
+    "win": {
+      "target": "portable"
+    }
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.25.0",
+    "electron-store": "^8.0.1",
+    "electron-updater": "^4.6.1",
+    "jquery": "^3.6.0",
+    "render": "^0.1.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ZTETool/ZTool-Desktop-App.git"
+  },
+  "devDependencies": {
+    "electron": "^16.0.8",
+    "electron-builder": "^22.14.5"
+  }
+}

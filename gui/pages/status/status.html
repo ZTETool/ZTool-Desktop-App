@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About</title>
+    <script src="../jquery.js"></script>
+    <script src="../utilities.js"></script>
+    <script src="../links_opener.js"></script>
+    <script src="../../../main.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../base.css"><!-- app css-->
+    <link rel="stylesheet" href="../web.css"> <!-- Web css-->
+    <link rel="stylesheet" href="../font.css"> <!-- Fonts css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- Font Awesome css -->
+<style>
+body {font-family: "Lato", sans-serif}
+.mySlides {display: none}
+</style>
+</head>
+<body>
+
+<!-- Navbar section -->
+<div class="w3-top" >
+  <div class="w3-bar w3-black w3-card" style="-webkit-app-region: drag">
+    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    
+    
+        <div class="w3-dropdown-hover w3-hide-small" style="-webkit-app-region: no-drag">
+      <button class="w3-padding-large w3-button" title="More">File <i class="fa fa-caret-down"></i></button>     
+      <div class="w3-dropdown-content w3-bar-block w3-card-1">
+              <a href="./../index/index.html" class="w3-bar-item w3-button">Info</a>
+              <a href="./../status/status.html" class="w3-bar-item w3-button">Status</a>
+    <a onclick="window.close()"class="w3-bar-item w3-button">Quit</a>
+    
+      </div>
+    </div>
+    
+    
+   
+    <div class="w3-dropdown-hover w3-hide-small" style="-webkit-app-region: no-drag">
+      <button class="w3-padding-large w3-button" title="More">Cell Settings <i class="fa fa-caret-down"></i></button>     
+      <div class="w3-dropdown-content w3-bar-block w3-card-2">
+              <a href="./../cellSettings-4gband/cellSettings-4gband.html" class="w3-bar-item w3-button">LTE Bands</a>
+        <a href="./../cellSettings-5gband/cellSettings-5gband.html" class="w3-bar-item w3-button">5G Bands</a>
+	<a href="./../cellSettings-4gcell/cellSettings-4gcell.html" class="w3-bar-item w3-button">LTE Cell Lock</a>
+      </div>
+    </div>
+    
+    <div class="w3-dropdown-hover w3-hide-small" style="-webkit-app-region: no-drag">
+      <button class="w3-padding-large w3-button" title="More">Config <i class="fa fa-caret-down"></i></button>     
+      <div class="w3-dropdown-content w3-bar-block w3-card-3">
+        <a href="./../config-modem/config-modem.html" class="w3-bar-item w3-button">Modem</a>
+        <a href="./../networkSettings-opmode/networkSettings-opmode.html" class="w3-bar-item w3-button">Operation Mode</a>
+      </div>
+    </div>
+        <div class="w3-dropdown-hover w3-hide-small"style="-webkit-app-region: no-drag">
+      <button class="w3-padding-large w3-button" title="More">Help <i class="fa fa-caret-down"></i></button>     
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="./../debug/debug.html" class="w3-bar-item w3-button">Debug</a>
+        <a href="https://github.com/ZTETool" target="_blank" rel="noopener" class="w3-bar-item w3-button">Help & Guides</a>
+        <a href="./../updater/updater.html" class="w3-bar-item w3-button">Check For Updates</a>
+        <a href="./../about/about.html" class="w3-bar-item w3-button">About</a>
+      </div>
+    </div>
+    <a onclick="window.close()" class="w3-padding-large w3-hover-red w3-hide-small w3-right" style="-webkit-app-region: no-drag"><i class="fa fa-times-circle-o"></i></a>
+    <a id="max-btn"class="w3-padding-large w3-hover-red w3-hide-small w3-right" style="-webkit-app-region: no-drag"><i class="fa fa-window-maximize"></i></a>
+        <a onclick="BrowserWindow.minimize()" class="w3-padding-large w3-hover-red w3-hide-small w3-right" style="-webkit-app-region: no-drag"><i class="fa fa-window-minimize"></i></a>
+  </div>
+  
+</div>
+
+
+<!-- Navbar section End-->
+
+
+<!--Body Content-->
+
+<div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
+    <h2 class="w3-wide">Status</h2>
+    <p> Status Example </p>
+  </div>
+
+<!--Body Content End-->
+
+<!--scripts Section-->
+
+
+
+<!--scripts Section End-->
+
+</body>
+</html>
+
+
+
+
