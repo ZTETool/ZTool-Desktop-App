@@ -1,7 +1,8 @@
-const { ipcMain, Notification } = require('electron')
+const { ipcMain, Notification, app} = require('electron')
 const Storage = require('./storage');
 const Session = require('../lib/session');
 const Forms = require('../lib/forms');
+const {autoUpdater} = require("electron-updater");
 
 class Actions {
     constructor() {
@@ -25,6 +26,29 @@ class Actions {
         ipcMain.on('set5GBands', this.set5GBands.bind(this));
         ipcMain.on('set4GBands', this.set4GBands.bind(this));
         ipcMain.on('set4GCell', this.set4GCell.bind(this));
+
+        ipcMain.on('app_version', this.appVersion.bind(this));
+
+        autoUpdater.on('update-available', this.updateAvailable.bind(this));
+        autoUpdater.on('update-downloaded', this.updateDownload.bind(this));
+
+        ipcMain.on('restart_app', this.restartApp.bind(this));
+    }
+
+    appVersion(event) {
+        this.window.send('app_version', { version: app.getVersion() });
+    }
+
+    updateAvailable(event) {
+        this.window.send('update_available');
+    }
+
+    updateDownload() {
+        this.window.send('update_downloaded');
+    }
+
+    restartApp() {
+        autoUpdater.quitAndInstall();
     }
 
     async getIndexInfo(event) {

@@ -1,7 +1,6 @@
-const { app, ipcMain } = require('electron');
+const { app } = require('electron');
 const Actions = require('./actions');
 const Window = require('./window');
-const { autoUpdater } = require('electron-updater');
 
 
 class App {
@@ -13,21 +12,6 @@ class App {
         app.on('window-all-closed', () => {
             app.quit();
         });
-
-ipcMain.on('app_version', (event) => {
-  event.sender.send('app_version', { version: app.getVersion() });
-});
-
-autoUpdater.on('update-available', () => {
-  mainWindow.webContents.send('update_available');
-});
-autoUpdater.on('update-downloaded', () => {
-  mainWindow.webContents.send('update_downloaded');
-});
-
-ipcMain.on('restart_app', () => {
-  autoUpdater.quitAndInstall();
-});
     }
 
     ready() {

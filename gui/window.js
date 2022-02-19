@@ -29,7 +29,7 @@ class Window extends BrowserWindow {
 
         Menu.setApplicationMenu(null);
 
-        this.webContents.openDevTools();
+        // this.webContents.openDevTools();
 
         this.once('ready-to-show', () => {
             autoUpdater.checkForUpdatesAndNotify();  this.show();
